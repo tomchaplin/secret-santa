@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Secret Santa</title>
+	<link rel="stylesheet" href="css/style.css">
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body id="home">
+
+	<h1>Secret Santa</h1>
+	<p>Please select your name below:</p>
+	<ul>
+		{%each%}<li><a href="/form/{{id}}">{{name}}</a></li>{%endeach%}
+	</ul>
+
+</body>
+</html>

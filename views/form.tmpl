@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Secret Santa - {{name}}</title>
+	<link rel="stylesheet" href="css/style.css">
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body id="home">
+
+	<h1>Secret Santa - {{name}}</h1>
+	<p>Please select below which people you can give presents to:</p>
+	<form action="/form/{{id}}" method="post">
+		{%each people as val%}
+		<input type="checkbox" name="{{val.id}}" value="true" checked>{{val.name}}<br>
+		{%endeach%}
+		<br>
+		<label for="pass">Password:</label>
+		<input type="password" id="pass" name="password">
+		<br>
+		<input type="submit">
+	</form>
+
+</body>
+</html>
