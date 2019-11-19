@@ -2,93 +2,31 @@
   "people": [
     {
       "id": 0,
-      "name": "Thomas",
+      "name": "Tom",
       "submitted": true,
-      "hash": "pbkdf2$10000$ca041a0864092629ebb636131e00b3dad78a6699ca9efbc04ff48a800f445ed0025e77ab3a4d1a6c4333dbd5b4b20b16caec73a5d67af193f2bd51ee70ea5e43$6bc5da6f731624c4253d8987eda4bc9fd6adffcdb9e01982bd8a78c15534fa916a17c09c52e62dee95659bf148f5d2d435e60c8c8b0d4688a614b48fa92aba94",
       "possible": [
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9
+        1
       ],
-      "target": ""
+      "target": 1
     },
     {
       "id": 1,
-      "name": "Nicola",
-      "submitted": false,
-      "hash": "",
-      "possible": [],
-      "target": ""
+      "name": "Amrik",
+      "submitted": true,
+      "possible": [
+        2
+      ],
+      "target": 2
     },
     {
       "id": 2,
-      "name": "Inigo",
-      "submitted": false,
-      "hash": "",
-      "possible": [],
-      "target": ""
-    },
-    {
-      "id": 3,
-      "name": "Pratt",
-      "submitted": false,
-      "hash": "",
-      "possible": [],
-      "target": ""
-    },
-    {
-      "id": 4,
-      "name": "Massimo",
-      "submitted": false,
-      "hash": "",
-      "possible": [],
-      "target": ""
-    },
-    {
-      "id": 5,
-      "name": "Ollie C",
-      "submitted": false,
-      "hash": "",
-      "possible": [],
-      "target": ""
-    },
-    {
-      "id": 6,
-      "name": "Ollie M",
-      "submitted": false,
-      "hash": "",
-      "possible": [],
-      "target": ""
-    },
-    {
-      "id": 7,
-      "name": "Anisha",
-      "submitted": false,
-      "hash": "",
-      "possible": [],
-      "target": ""
-    },
-    {
-      "id": 8,
-      "name": "Amrik",
-      "submitted": false,
-      "hash": "",
-      "possible": [],
-      "target": ""
-    },
-    {
-      "id": 9,
       "name": "Dan",
-      "submitted": false,
-      "hash": "",
-      "possible": [],
-      "target": ""
+      "submitted": true,
+      "possible": [
+        0
+      ],
+      "target": 0
     }
   ],
-  "all_submitted": false
+  "all_submitted": true
 }
