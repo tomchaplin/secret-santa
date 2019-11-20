@@ -11,19 +11,19 @@ const app = express();
 const adapter = new FileSync('db.json');
 const db = low(adapter);
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.static(__dirname+'/public'));
 
 db.defaults({
 	people: [
 		{id: 0, name: "Tom", submitted: false, hash: '', possible: [], target: ''},
-		/*{id: 1, name: "Nicola", submitted: false, hash: '', possible: [], target: ''},
+		{id: 1, name: "Nikki", submitted: false, hash: '', possible: [], target: ''},
 		{id: 2, name: "Inigo", submitted: false, hash: '', possible: [], target: ''},
 		{id: 3, name: "Pratt", submitted: false, hash: '', possible: [], target: ''},
 		{id: 4, name: "Massimo", submitted: false, hash: '', possible: [], target: ''},
 		{id: 5, name: "Ollie C", submitted: false, hash: '', possible: [], target: ''},
 		{id: 6, name: "Ollie M", submitted: false, hash: '', possible: [], target: ''},
-		{id: 7, name: "Anisha", submitted: false, hash: '', possible: [], target: ''},*/
-		{id: 1, name: "Amrik", submitted: false, hash: '', possible: [], target: ''},
-		{id: 2, name: "Dan", submitted: false, hash: '', possible: [], target: ''}
+		{id: 7, name: "Amrik", submitted: false, hash: '', possible: [], target: ''},
+		{id: 8, name: "Dan", submitted: false, hash: '', possible: [], target: ''}
 	],
 	all_submitted: false
 }).write();
@@ -124,6 +124,35 @@ app.post('/form/:id', (req, res) => {
 			}).write();
 		checkIfDone();
 		res.redirect('/success');
+	});
+});
+
+app.get('/get_recipient/:id', (req, res) => {
+	fs.readFile("views/get_recipient.tmpl", "utf8", (err, tmpl_file) => {
+		var tmpl = combyne(tmpl_file);
+		var person = db.get('people').find({id: parseInt(req.params.id) }).value();
+		var output = tmpl.render({id:req.params.id, name: person.name});
+		res.send(output);
+	});
+});
+
+app.post('/get_recipient/:id', (req, res) => {
+	var person = db.get('people').find({id: parseInt(req.params.id) }).value();
+	passwordHasher(req.body.password).verifyAgainst(person.hash, (err, verified) => {
+		if (err) {
+			res.send("Woops, something went wrong");
+		} else if(!verified) {
+			res.send(`Sorry your password was wrong, <a href='/get_recipient/${req.params.id}'>click here</a> to try again.`);
+		} else {
+			// Now we should send the correct recipient
+			recipId = person.target
+			var recipPerson = db.get('people').find({id: parseInt(recipId) }).value();
+			fs.readFile("views/get_recipient_view.tmpl", "utf8", (err, tmpl_file) => {
+				var tmpl = combyne(tmpl_file);
+				var output = tmpl.render({name: person.name, recipient: recipPerson.name});
+				res.send(output);
+			});
+		}
 	});
 });
 

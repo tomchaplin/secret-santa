@@ -1,0 +1,5 @@
+body {
+  font-size: calc(35px + (40 - 35) * ((100vw - 600px) / (1600 - 600)));
+  font-family: sans-serif;
+  background-color: #4df7ec;
+}
