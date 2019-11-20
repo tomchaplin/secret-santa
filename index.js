@@ -23,7 +23,8 @@ db.defaults({
 		{id: 5, name: "Ollie C", submitted: false, hash: '', possible: [], target: ''},
 		{id: 6, name: "Ollie M", submitted: false, hash: '', possible: [], target: ''},
 		{id: 7, name: "Amrik", submitted: false, hash: '', possible: [], target: ''},
-		{id: 8, name: "Dan", submitted: false, hash: '', possible: [], target: ''}
+		{id: 8, name: "Dan", submitted: false, hash: '', possible: [], target: ''},
+		{id: 9, name: "Anisha", submitted: false, hash: '', possible: [], target: ''}
 	],
 	all_submitted: false
 }).write();
@@ -56,7 +57,6 @@ function computeMatching() {
 		})
 	});
 	var matching = findMatching(num_people,num_people,edges);
-	console.log(matching);
 	matching.forEach( pair => {
 		db.get('people').find({id: pair[0]})
 			.assign({
