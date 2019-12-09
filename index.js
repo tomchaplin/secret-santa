@@ -15,16 +15,16 @@ app.use(express.static(__dirname+'/public'));
 
 db.defaults({
 	people: [
-		{id: 0, name: "Tom", submitted: false, hash: '', possible: [], target: ''},
-		{id: 1, name: "Nikki", submitted: false, hash: '', possible: [], target: ''},
-		{id: 2, name: "Inigo", submitted: false, hash: '', possible: [], target: ''},
-		{id: 3, name: "Pratt", submitted: false, hash: '', possible: [], target: ''},
-		{id: 4, name: "Massimo", submitted: false, hash: '', possible: [], target: ''},
-		{id: 5, name: "Ollie C", submitted: false, hash: '', possible: [], target: ''},
-		{id: 6, name: "Ollie M", submitted: false, hash: '', possible: [], target: ''},
-		{id: 7, name: "Amrik", submitted: false, hash: '', possible: [], target: ''},
-		{id: 8, name: "Dan", submitted: false, hash: '', possible: [], target: ''},
-		{id: 9, name: "Anisha", submitted: false, hash: '', possible: [], target: ''}
+		{id: 0, name: "Name 0", submitted: false, hash: '', possible: [], target: ''},
+		{id: 1, name: "Name 1", submitted: false, hash: '', possible: [], target: ''},
+		{id: 2, name: "Name 2", submitted: false, hash: '', possible: [], target: ''},
+		{id: 3, name: "Name 3", submitted: false, hash: '', possible: [], target: ''},
+		{id: 4, name: "Name 4", submitted: false, hash: '', possible: [], target: ''},
+		{id: 5, name: "Name 5", submitted: false, hash: '', possible: [], target: ''},
+		{id: 6, name: "Name 6", submitted: false, hash: '', possible: [], target: ''},
+		{id: 7, name: "Name 7", submitted: false, hash: '', possible: [], target: ''},
+		{id: 8, name: "Name 8", submitted: false, hash: '', possible: [], target: ''},
+		{id: 9, name: "Name 9", submitted: false, hash: '', possible: [], target: ''}
 	],
 	all_submitted: false
 }).write();
